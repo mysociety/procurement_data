@@ -1,7 +1,12 @@
-# Template notebook
 
-This is a template notebook used for mySociety data science projects.
+# procurement_data
 
-You only update this repo, and don't clone directly from it. See instructions in [this repo](https://github.com/mysociety/notebook-auto-template) on how to use it as a template for new projects.
+[![badge](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/mysociety/procurement_data/HEAD)
 
-Instructions on using the features of this notebook are available in [data-repo-readme.md](src/data_common/data-repo-readme.md).
+Data for use in procurement prototyping
+
+This repository is available online at https://github.com/mysociety/procurement_data
+
+If Github Pages are enabled, the URL is: https://mysociety.github.io/procurement_data/
+
+Instructions on using the features of this notebook are available in [notebooks-readme.md](notebooks-readme.md).
