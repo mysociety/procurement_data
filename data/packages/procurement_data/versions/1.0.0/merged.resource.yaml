@@ -1,0 +1,394 @@
+title: Open Contracting Data Standard UK Contracts
+description: This is a single CSV source of the OCDS contracts for the UK
+custom:
+  row_count: 420070
+path: merged.csv
+name: merged
+profile: tabular-data-resource
+scheme: file
+format: csv
+hashing: md5
+encoding: utf-8
+schema:
+  fields:
+  - name: _link_item
+    type: string
+    description: internal OCDS id
+    constraints:
+      unique: false
+    example: 1.tender.items.0
+  - name: _link_release
+    type: integer
+    description: OCDS release number
+    constraints:
+      unique: false
+    example: 1
+  - name: id_item
+    type: integer
+    description: id for individual contract item
+    constraints:
+      unique: false
+    example: 1
+  - name: item_description
+    type: string
+    description: description for individual contract item
+    constraints:
+      unique: false
+      enum:
+      - See description of related tender.
+    example: See description of related tender.
+  - name: classification_scheme
+    type: string
+    description: name of the classification scheme used for individual contract item
+    constraints:
+      unique: false
+      enum:
+      - CPV
+    example: CPV
+  - name: classification_id
+    type: integer
+    description: id of the classification for an individual contract item
+    constraints:
+      unique: false
+    example: 80400000
+  - name: classification_description
+    type: string
+    description: description of the classification for an individual contract item
+    constraints:
+      unique: false
+    example: Adult and other education services
+  - name: classification_uri
+    type: string
+    description: uri for the classification for an individual contract item
+    constraints:
+      unique: false
+    example: http://cpv.data.ac.uk/code-80400000.html
+  - name: local-authority-code
+    type: string
+    description: 3 letter code for the authority issuing the contract
+    constraints:
+      unique: false
+    example: SHF
+  - name: _link_council
+    type: integer
+    description: OCDS internal id for the authority issuing the contract
+    constraints:
+      unique: false
+    example: 1
+  - name: council
+    type: string
+    description: name of the authority issuing the contract
+    constraints:
+      unique: false
+    example: Sheffield City Council
+  - name: gss_code
+    type: string
+    description: GSS code for the authority issuing the contact
+    constraints:
+      unique: false
+    example: E08000019
+  - name: _link_tender
+    type: integer
+    description: OCDS internal if for the tender
+    constraints:
+      unique: false
+    example: 1
+  - name: id_tender
+    type: string
+    description: id for the tender
+    constraints:
+      unique: false
+    example: 20220527180213-104130
+  - name: tender_title
+    type: string
+    description: title of the tender
+    constraints:
+      unique: false
+    example: Supported Work Placement Service for people living with Autism Spectrum
+      Disorder
+  - name: tender_description
+    type: string
+    description: description of the tender
+    constraints:
+      unique: false
+    example: Supported Work Placement Service for people living with Autism Spectrum
+      Disorder
+  - name: tender_status
+    type: string
+    description: status of the tender
+    constraints:
+      unique: false
+      enum:
+      - active
+      - complete
+      - planning
+      - unsuccessful
+      - cancelled
+      - planned
+    example: active
+  - name: tender_amount
+    type: number
+    description: value of the tender in the currency specified in value_currency_tender
+    constraints:
+      unique: false
+    example: 70000.0
+  - name: tender_currency
+    type: string
+    description: currency the tender amount is in
+    constraints:
+      unique: false
+      enum:
+      - GBP
+    example: GBP
+  - name: tender_minimum_amount
+    type: number
+    description: the minimum value of the tender
+    constraints:
+      unique: false
+    example: 1.0
+  - name: tender_minimum_currency
+    type: string
+    description: the currency of the minimum tender amount
+    constraints:
+      unique: false
+      enum:
+      - GBP
+    example: GBP
+  - name: procurementMethod
+    type: string
+    description: how the tender will be procured (e.g direct or through a contract
+      framework)
+    constraints:
+      unique: false
+    example: open
+  - name: procurementMethodDetails
+    type: string
+    description: further details about the procurement method
+    constraints:
+      unique: false
+    example: Open procedure
+  - name: procurementMethodRationale
+    type: string
+    description: explanation of why the procurement method has been selected
+    constraints:
+      unique: false
+    example: Unplanned early termination of the current contract requires a swift
+      replacement to ensure continuity of food provision.
+  - name: submissionMethodDetails
+    type: string
+    description: how to submit a proposal for the tender
+    constraints:
+      unique: false
+    example: Please apply directly to the buyer using the contact details provided,
+      or follow the instructions given in the notice description or information section.
+  - name: tenderPeriod_startDate
+    type: string
+    description: the start date of the tender
+    constraints:
+      unique: false
+    example: '2022-05-27T18:02:18'
+  - name: tenderPeriod_endDate
+    type: string
+    description: the end date of the tender
+    constraints:
+      unique: false
+    example: '2022-06-28T12:00:00'
+  - name: tender_datePublished
+    type: string
+    description: the date the tender was published
+    constraints:
+      unique: false
+    example: '2022-05-27T18:02:18'
+  - name: documents
+    type: number
+    description: number of documents associated with the tender
+    constraints:
+      unique: false
+    example: ''
+  - name: xClassifications_isSuitableForSme
+    type: number
+    description: is the tender suitable for Small/Medium Enterprises
+    constraints:
+      unique: false
+    example: 1.0
+  - name: xClassifications_isSuitableForVco
+    type: number
+    description: is the tender suitable for Voluntary/Charitable organisations
+    constraints:
+      unique: false
+    example: 1.0
+  - name: xClassifications_ojeuContractType
+    type: string
+    description: what type of contract (i.e. for services or goods)
+    constraints:
+      unique: false
+    example: Services
+  - name: _link_award
+    type: string
+    description: internal OCDS id
+    constraints:
+      unique: false
+    example: 5.awards.0
+  - name: id_award
+    type: string
+    description: id for the award made for the tender
+    constraints:
+      unique: false
+    example: 5b0e0dc6-a204-4260-9d99-14141d65d47f
+  - name: award_title
+    type: number
+    description: title of the award made for the tender
+    constraints:
+      unique: false
+    example: ''
+  - name: award_description
+    type: string
+    description: description of the award made for the tender
+    constraints:
+      unique: false
+    example: See description of related tender
+  - name: award_status
+    type: string
+    description: status of the award made for the tender
+    constraints:
+      unique: false
+    example: active
+  - name: award_decision_date
+    type: string
+    description: date the award was made
+    constraints:
+      unique: false
+    example: '2022-05-27T00:00:00'
+  - name: award_amount
+    type: number
+    description: value of the award in the currency in value_currency_award
+    constraints:
+      unique: false
+    example: 48000.0
+  - name: award_currency
+    type: string
+    description: currency the award value is in
+    constraints:
+      unique: false
+    example: GBP
+  - name: contractPeriod_startDate
+    type: string
+    description: start date for the award
+    constraints:
+      unique: false
+    example: '2022-06-01T00:00:00'
+  - name: contractPeriod_endDate
+    type: string
+    description: end date for the award
+    constraints:
+      unique: false
+    example: '2023-02-28T00:00:00'
+  - name: award_datePublished
+    type: string
+    description: date the award was published
+    constraints:
+      unique: false
+    example: '2022-05-27T12:20:11'
+  - name: _link_supplier
+    type: string
+    description: internal OCDS identifier
+    constraints:
+      unique: false
+    example: 5.awards.0.suppliers.0
+  - name: _link_awards
+    type: string
+    description: internal OCDS identifier
+    constraints:
+      unique: false
+    example: 5.awards.0
+  - name: supplier_name
+    type: string
+    description: name of the organisation that is suppliying the award
+    constraints:
+      unique: false
+    example: The Forge
+  - name: supplier_id
+    type: number
+    description: id for the organisation that is supplying the award
+    constraints:
+      unique: false
+    example: ''
+  - name: supplier_identifier_scheme
+    type: string
+    description: scheme used in the supplier identifier
+    constraints:
+      unique: false
+    example: GB-COH
+  - name: supplier_identifier_id
+    type: string
+    description: scheme id for the supplier
+    constraints:
+      unique: false
+    example: SC169482
+  - name: address_streetAddress
+    type: string
+    description: street address of the supplier
+    constraints:
+      unique: false
+    example: DH9 0HQ
+  - name: address_locality
+    type: number
+    description: locality for the supplier
+    constraints:
+      unique: false
+    example: ''
+  - name: address_region
+    type: number
+    description: region for the supplier
+    constraints:
+      unique: false
+    example: ''
+  - name: address_postalCode
+    type: number
+    description: postal code for the supplier
+    constraints:
+      unique: false
+    example: ''
+  - name: address_countryName
+    type: number
+    description: country for the supplier
+    constraints:
+      unique: false
+    example: ''
+  - name: contactPoint_name
+    type: number
+    description: contact name for the supplier
+    constraints:
+      unique: false
+    example: ''
+  - name: contactPoint_email
+    type: number
+    description: contact email for the supplier
+    constraints:
+      unique: false
+    example: ''
+  - name: contactPoint_telephone
+    type: number
+    description: contact phone number for the supplier
+    constraints:
+      unique: false
+    example: ''
+  - name: contactPoint_faxNumber
+    type: number
+    description: contact fax number for the supplier
+    constraints:
+      unique: false
+    example: ''
+  - name: sme
+    type: number
+    description: is the supplier a Small/Medium enterprise
+    constraints:
+      unique: false
+    example: 1.0
+  - name: vco
+    type: number
+    description: is the supplier a Charity/Voluntary sector organisation
+    constraints:
+      unique: false
+    example: 1.0
+hash: fa0f0a127a6f2ff92129b65748699696

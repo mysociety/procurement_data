@@ -1,24 +1,19 @@
 name: procurement_data
 title: Procurement data
-description : |
-  procurement contract data
-version: 0.1.0
+description: "procurement contract data\n"
+version: 1.0.0
 licenses:
-  
-  - name: CC-BY-4.0
-    path: https://creativecommons.org/licenses/by/4.0/
-    title: Creative Commons Attribution 4.0 International License
-  
+- name: CC-BY-4.0
+  path: https://creativecommons.org/licenses/by/4.0/
+  title: Creative Commons Attribution 4.0 International License
 contributors:
-  - title: mySociety
-    path: https://mysociety.org
-    role: author
-
-
+- title: mySociety
+  path: https://mysociety.org
+  role: author
 custom:
   build: procurement_data.fetch_contract_data:build
   tests:
-    - test_procurement_data
+  - test_procurement_data
   dataset_order: 0
   download_options:
     gate: default
@@ -37,4 +32,5 @@ custom:
       include: all
       exclude: none
       render: true
-
+  change_log:
+    1.0.0: initial release
