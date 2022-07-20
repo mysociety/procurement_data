@@ -10,7 +10,7 @@ CONTRACT_XLS_URL = "https://fra1.digitaloceanspaces.com/ocdsdata/united_kingdom_
 top_level = Path(__file__).parent.parent.parent
 raw_root = top_level / "data" / "raw"
 raw_xls_path = top_level / "data" / "raw" / "contracts.xlsx"
-interim_root = top_level / "data" / "interim"
+interim_root = top_level / "data" / "private"
 package_root = top_level / "data" / "packages" / "procurement_data"
 
 processed_csv_path = top_level / "data" / "packages" / "contracts" / "contracts.csv"
@@ -109,7 +109,7 @@ def add_council_codes():
     df.to_csv(buyer_path, index=False, header=True)
 
 def remove_non_council_rows():
-    merged_path = interim_root / "merged.csv"
+    merged_path = package_root / "merged.csv"
     df = pd.read_csv(merged_path)
     df = df.loc[~df["local-authority-code"].isna()]
     df.to_csv(merged_path, index=False, header=True)
